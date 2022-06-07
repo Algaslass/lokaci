@@ -1,0 +1,68 @@
+
+* {
+    box-sizing: border-box;
+}
+body {
+    background-image: url(iph2.jpg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    overflow: hidden;
+}
+
+.clock {
+    background-image: url(clockk.png);
+    background-size: cover;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border-radius: 2px solid black;
+    position: relative;
+    
+}
+
+.clock .needle {
+    --rotation: 0;
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    width: 10px;
+    background-color: black;
+    transform-origin: bottom;
+    border: 1px solid white;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
+    z-index: 10;
+    transform: translate(-50%) rotate(calc(var(--rotation) * 1deg));
+}
+
+.clock::after {
+    content: "";
+    position: absolute;
+    background-color: black;
+    z-index: 11;
+    width: 15px;
+    height: 15px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+}
+
+.clock .needle.second {
+    width: 5px;
+    height: 45%;
+    background-color: blue;
+}
+
+.clock .needle.minute {
+    width: 7px;
+    height: 40%;
+    background-color: black;
+}
+.clock .needle.hour {
+    width: 10px;
+    height: 35%;
+    background-color: black;
+}
